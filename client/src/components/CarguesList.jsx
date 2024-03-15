@@ -18,41 +18,33 @@ export function CarguesList() {
 
   return (
     <div>
+      <div className="flex box-decoration bg-slate-500 justify-center py-4 text-white rounded-sm ">Cargues Informacion</div>
+      <div className="flex box-decoration bg-slate-800 justify-between py-4  text-white rounded-sm ">
+        <div>Cantidad Cajas</div>
+        <div>Alto Caja</div>
+        <div>Ancho Caja</div>
+        <div>Largo Caja</div>
+        <div>Alto Contenedor</div>
+        <div>Ancho Contenedor</div>
+        <div>Largo Contenedor</div>
+      </div>
       {cargues &&
         cargues.map((cargue) => (
-          <table className="border-collapse border border-slate-500 " key={cargue.id}
+          <div className="" key={cargue.id}
             onClick={() =>
               navigate('/cargues/' + cargue.id)
             }
           >
-            <thead>
-              <tr>Cargue</tr>
-              <tr>Informacion del cargue:</tr>
-            </thead>
-            <tbody>
-              <tr>Cantidad de cajas:
-                <th className="border border-slate-600">{cargue.cantidadCajas}</th> 
-              </tr>
-              <tr>Alto de la caja
-                <th className="border border-slate-600">{cargue.altoCaja}</th>
-              </tr>
-              <tr>Ancho de la caja
-                <th className="border border-slate-600">{cargue.anchoCaja}</th>
-              </tr>
-              <tr>Largo de la caja
-                <th className="border border-slate-600">{cargue.largoCaja}</th>
-              </tr>
-              <tr>Alto del contenedor
-                <th className="border border-slate-600">{cargue.altoContenedor}</th>
-              </tr>
-              <tr>Ancho del contenedor
-                <th className="border border-slate-600">{cargue.anchoContenedor}</th>
-              </tr>
-              <tr>Largo del contenedor
-                <th className="border border-slate-600">{cargue.largoContenedor}</th>
-              </tr>
-            </tbody>
-          </table>
+            <div className="flex box-decoration bg-slate-800 justify-between py-4  text-white rounded-sm">
+              <div>{cargue.cantidadCajas}</div>
+              <div>{cargue.altoCaja}</div>
+              <div>{cargue.anchoCaja}</div>
+              <div>{cargue.largoCaja}</div>
+              <div>{cargue.altoContenedor}</div>
+              <div>{cargue.anchoContenedor}</div>
+              <div>{cargue.largoContenedor}</div>
+            </div>
+          </div>
         ))}
     </div>
   );
